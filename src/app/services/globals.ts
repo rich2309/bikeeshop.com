@@ -3,7 +3,7 @@
  */
 
 export const API_GLOBALS = {
-  url: 'http://localhost/proyectos/bikeeshop_app/api.bikeeshop.com/',
+  url: 'https://infodb.iutmetz.univ-lorraine.fr/~cabreras1u/api.bikeeshop.com/',
   source_urn: {
       category: 'categories.php/products',
       description_order: 'description_orders.php/description_orders',
