@@ -1,0 +1,38 @@
+/* header */
+nav {
+  box-shadow: 0 1px 4px 1px #BDBDBD;
+  background-color: white;
+}
+
+li > a {
+  
+}
+
+.shopping_cart {
+  margin: 0 auto;
+  padding: 4px;
+}
+
+/* shopping cart */
+i {
+  transition: 500ms;
+  color: #F44336;
+  border-radius: 50%;
+}
+
+i:hover {
+  transition: 500ms;
+  background-color: #F44336;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* app section*/
+.app-content {
+  margin-top: 35px;
+}
+
+section {
+  margin: 20px;
+}
