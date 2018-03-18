@@ -2,10 +2,29 @@
   text-align: justify;
 }
 
-.product_actions {
+.product_price{
   text-align: right;
+  margin-top: 10px;
+}
+
+.product-name{
+  width: 297px;
+  height: 56px;
 }
 
 .badge {
   font-size: 25px;
+  background: #FF8F00;
 }
+
+.img-size{
+  width: 315px;
+  height: 210px;
+}
+
+.pr-size{
+  width: 315px;
+  height: 141px;
+}
+
+
