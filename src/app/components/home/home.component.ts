@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Router, ActivatedRoute, Params } from '@angular/router';
 import { APP_CURRENCIES } from '../../services/globals';
 import { ProductsService } from '../../services/dao/products.service';
-import {Products} from '../../entities/Products';
+import { Products } from '../../entities/Products';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(
     // private _route: ActivatedRoute,
     // private _router: Router,
-    private _productService: ProductsService
+    private _productService: ProductsService,
   ) {
     this.title_component = 'Bikeeshop.com';
     this.product_currency = APP_CURRENCIES.euro;
