@@ -5,15 +5,19 @@ nav {
 }
 
 li > a {
-  
+
 }
 
-.shopping_cart {
-  margin: 0 auto;
-  padding: 4px;
-}
+/* header form */
+
 
 /* shopping cart */
+
+.shopping_cart {
+  padding: 4px;
+  margin-right: 15px;
+}
+
 i {
   transition: 500ms;
   color: #F44336;
@@ -21,9 +25,6 @@ i {
 }
 
 i:hover {
-  transition: 500ms;
-  background-color: #F44336;
-  color: white;
   cursor: pointer;
 }
 

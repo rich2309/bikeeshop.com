@@ -19,12 +19,14 @@
         <ul class="nav navbar-nav">
           <li *ngFor="let category of category_list"><a href="#">{{ category.name }}</a></li>
         </ul>
-        <form class="navbar-form navbar-left">
+        <!--
+          <form class="navbar-form navbar-left">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control search-bar">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Chercher</button>
         </form>
+        -->
         <ul class="nav navbar-nav navbar-right">
           <li><a class="shopping_cart" href="#"><i class="material-icons md-36">shopping_cart</i></a></li>
         </ul>
