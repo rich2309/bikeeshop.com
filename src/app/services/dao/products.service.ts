@@ -15,4 +15,8 @@ export class ProductsService {
   getProducts(): Observable<any> {
     return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products);
   }
+
+  getProduct(idProduct: number) {
+    return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products + '/' + idProduct);
+  }
 }

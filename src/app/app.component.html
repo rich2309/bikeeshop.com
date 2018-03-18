@@ -17,7 +17,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li *ngFor="let category of category_list"><a [routerLink]="'/cart'">{{ category.name }}</a></li>
+          <li *ngFor="let category of category_list"><a [routerLink]="category.name | lowercase">{{ category.name }}</a></li>
         </ul>
         <!--
           <form class="navbar-form navbar-left">

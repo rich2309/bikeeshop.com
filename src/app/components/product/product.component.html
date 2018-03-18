@@ -1,20 +1,27 @@
 <div class="col-md-4 col-sm-6">
   <div class="thumbnail">
-    <a href="">
+    <a (click)="productDetails(product)">
       <img class="img-size" src="{{ product.url_img }}" alt="{{ product.name }}">
     </a>
     <div class="caption pr-size">
       <div class="product-name">
         <h3>
-          <a href="/product_detail">
+          <a (click)="productDetails(product)" >
             {{ product.name }}
           </a>
         </h3>
       </div>
-
-      <p class="product_price">
+      <div class="product_description">
+        <p>
+          {{ product.short_description }}
+        </p>
+      </div>
+      <div class="product_price">
+        <a id="product-details" class="btn btn-default" (click)="productDetails(product)">
+          Details
+        </a>
         <span class="badge">{{ product.price }} {{ currency }}</span>
-      </p>
+      </div>
     </div>
   </div>
 </div>

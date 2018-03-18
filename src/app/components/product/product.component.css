@@ -1,20 +1,35 @@
+.thumbnail {
+  overflow: hidden;
+  height: 420px;
+}
+/* product name and description */
+
+.product-name, .product_description {
+  width: 100%;
+}
+.product-name{
+  height: 60px;
+}
+
 .product_description {
+  height: 60px;
+}
+
+.product_description > p {
   text-align: justify;
 }
 
+/* product price */
 .product_price{
   text-align: right;
-  margin-top: 10px;
-}
-
-.product-name{
-  width: 297px;
-  height: 56px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .badge {
   font-size: 25px;
-  background: #FF8F00;
+  background: #2196F3;
 }
 
 .img-size{
@@ -23,8 +38,14 @@
 }
 
 .pr-size{
-  width: 315px;
-  height: 141px;
+  width: 100%;
 }
 
+#product-details {
+  float: left;
+}
+
+a:hover {
+  cursor: pointer;
+}
 

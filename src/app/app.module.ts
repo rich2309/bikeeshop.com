@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 // routing support
 import { RoutingModule, AppRoutingProviders } from './app.routing';
 
+// custom services
+import { Dataservice } from './services/dataservice';
+
 // http support
 import {HttpClientModule} from '@angular/common/http';
 
@@ -32,7 +35,8 @@ import { ShoppingCartComponent } from './components/shopping-car/shopping-cart.c
   ],
   providers: [
     AppRoutingProviders,
-    CookieService
+    CookieService,
+    Dataservice
   ],
   bootstrap: [AppComponent]
 })

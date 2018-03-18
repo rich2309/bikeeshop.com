@@ -8,8 +8,9 @@ import { ShoppingCartComponent } from './components/shopping-car/shopping-cart.c
 
 const app_routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'product_detail', component: ProductDetailComponent},
-  {path: 'cart', component: ShoppingCartComponent}
+  {path: 'details/:idProduct', component: ProductDetailComponent},
+  {path: 'cart', component: ShoppingCartComponent},
+  {path: ':category', component: ProductDetailComponent}
 ];
 
 export const AppRoutingProviders: any[] = [];
