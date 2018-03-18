@@ -11,13 +11,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Bikeeshop</a>
+        <a class="navbar-brand" [routerLink]="''">Bikeeshop</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li *ngFor="let category of category_list"><a href="#">{{ category.name }}</a></li>
+          <li *ngFor="let category of category_list"><a [routerLink]="'/cart'">{{ category.name }}</a></li>
         </ul>
         <!--
           <form class="navbar-form navbar-left">
@@ -28,7 +28,7 @@
         </form>
         -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="shopping_cart" href="#"><i class="material-icons md-36">shopping_cart</i></a></li>
+          <li><a class="shopping_cart" [routerLink]="'/cart'"><i class="material-icons md-36">shopping_cart</i></a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -36,7 +36,6 @@
 </header>
 
 <div class="app-content">
-  <!-- carousel -->
   <div class="container">
 
     <section>
