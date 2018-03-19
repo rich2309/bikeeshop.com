@@ -1,15 +1,8 @@
-<h3>Product details</h3>
 <div class="col-md-12 col-sm-12">
+  <h2>{{ product.name }}</h2>
   <div class="thumbnail">
-    <a href="">
-      <img  src="{{ product.url_img }}" alt="{{ product.name }}">
-    </a>
+    <img  src="{{ product.url_img }}" alt="{{ product.name }}">
     <div class="caption">
-      <h3>
-        <a href="">
-          {{ product.name }}
-        </a>
-      </h3>
       <p class="product_description">{{ product.description }}</p>
     </div>
   </div>

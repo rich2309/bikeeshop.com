@@ -9,3 +9,14 @@
 .badge {
   font-size: 25px;
 }
+
+.thumbnail {
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.col-md-12.col-sm-12 {
+  margin: 0 auto;
+  text-align: center;
+}
