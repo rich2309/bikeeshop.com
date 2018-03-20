@@ -17,8 +17,9 @@ import { CookieService } from 'ngx-cookie-service';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
-import {ProductDetailComponent} from './components/product_detail/product_detail.component';
+import { ProductDetailComponent } from './components/product_detail/product_detail.component';
 import { ShoppingCartComponent } from './components/shopping-car/shopping-cart.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ShoppingCartComponent } from './components/shopping-car/shopping-cart.c
     HomeComponent,
     ProductComponent,
     ProductDetailComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
