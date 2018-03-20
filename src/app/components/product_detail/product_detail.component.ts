@@ -3,6 +3,7 @@ import { Products } from '../../entities/Products';
 import { Dataservice } from '../../services/dataservice';
 import { ProductsService } from '../../services/dao/products.service';
 import { ActivatedRoute } from '@angular/router';
+import {APP_CURRENCIES} from '../../services/globals';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   providers: [ProductsService]
 })
 export class ProductDetailComponent implements OnInit {
+  public currency: string;
   @Input()
   public product: Products;
   public idProduct: any;
@@ -22,6 +24,7 @@ export class ProductDetailComponent implements OnInit {
   ) {
     if (this._serviceData.data) {
       this.product = this._serviceData.data;
+      this.currency = APP_CURRENCIES.euro;
     } else {
       this._route.params.subscribe(
         params => {
@@ -30,6 +33,7 @@ export class ProductDetailComponent implements OnInit {
           console.log(<any>error);
         }
       );
+      this.currency = APP_CURRENCIES.euro;
     }
   }
   ngOnInit () {
@@ -43,3 +47,5 @@ export class ProductDetailComponent implements OnInit {
     );
   }
 }
+
+
