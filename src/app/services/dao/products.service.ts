@@ -16,7 +16,12 @@ export class ProductsService {
     return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products);
   }
 
-  getProduct(idProduct: number) {
+  getProduct(idProduct: number): Observable<any> {
     return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products + '/' + idProduct);
   }
+
+  getProductsByCategory(idCategory: number): Observable<any> {
+    return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products + '/category/' + idCategory);
+  }
+
 }

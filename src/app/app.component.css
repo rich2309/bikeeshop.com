@@ -4,8 +4,8 @@ nav {
   background-color: white;
 }
 
-li > a {
-
+li > a:hover {
+  cursor: pointer;
 }
 
 /* header form */

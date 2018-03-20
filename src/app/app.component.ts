@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from './services/dao/categories.service';
-import {Category} from './entities/Category';
+import { Category } from './entities/Category';
+import { Dataservice } from './services/dataservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,9 @@ export class AppComponent implements OnInit {
   public category_list: Category[];
 
   constructor(
-    private _categoryService: CategoriesService
+    private _categoryService: CategoriesService,
+    private _dataService: Dataservice,
+    private _router: Router
   ) {
     this.title = 'Bikeeshop.com';
   }
@@ -28,4 +32,9 @@ export class AppComponent implements OnInit {
       }
     );
   }
+
+  productsInCategory(category: Category) {
+    this._router.navigate(['category', category.idCategory]);
+  }
+
 }

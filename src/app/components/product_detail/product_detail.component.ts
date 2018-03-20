@@ -19,20 +19,17 @@ export class ProductDetailComponent implements OnInit {
     private _serviceData: Dataservice,
     private _productService: ProductsService,
     private _route: ActivatedRoute
-  ) {
-    if (this._serviceData.data) {
-      this.product = this._serviceData.data;
-    } else {
-      this._route.params.subscribe(
-        params => {
-          this.idProduct = params['idProduct'];
-        }, error => {
-          console.log(<any>error);
-        }
-      );
-    }
-  }
+  ) {}
   ngOnInit () {
+
+    this._route.params.subscribe(
+      params => {
+        this.idProduct = params['idProduct'];
+      }, error => {
+        console.log(<any>error);
+      }
+    );
+
     this._productService.getProduct(this.idProduct).subscribe(
       result => {
         this.product = JSON.parse(JSON.stringify(result));
@@ -41,5 +38,6 @@ export class ProductDetailComponent implements OnInit {
         console.log(<any>error);
       }
     );
+
   }
 }
