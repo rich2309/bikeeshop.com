@@ -9,14 +9,14 @@ import { Products } from '../../entities/Products';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  public products_in_cart: Products[];
+  public products_in_cart: Products;
 
   constructor(private cookieService: CookieService) {}
 
   ngOnInit() {
-    if (this.cookieService.check('products_in_cart')) {
-      this.products_in_cart = JSON.parse(this.cookieService.get('products_in_cart'));
+    if (this.cookieService.check('shopping_cart')) {
+      this.products_in_cart = JSON.parse(this.cookieService.get('shopping_cart'));
+      console.log(this.products_in_cart);
     }
-
   }
 }

@@ -13,6 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 // cookie support
 import { CookieService } from 'ngx-cookie-service';
 
+// sweet-alert 2 support
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+
 // components
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
@@ -35,7 +38,8 @@ import {BannerComponent} from './components/banner/banner.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     AppRoutingProviders,
