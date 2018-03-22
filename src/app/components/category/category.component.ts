@@ -14,6 +14,7 @@ export class CategoryComponent implements OnInit {
   public product_list: Products[];
   public idCategory: any;
 
+
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
@@ -31,6 +32,7 @@ export class CategoryComponent implements OnInit {
     this._productService.getProductsByCategory(idCategory).subscribe(
       result => {
         this.product_list = result;
+        this.idCategory = idCategory;
       });
   }
 

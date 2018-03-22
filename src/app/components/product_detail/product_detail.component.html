@@ -2,24 +2,24 @@
   <div class="col-lg-12">
     <div class="thumbnail col-sm-12">
       <div class="row">
-        <article class="col-sm-12 col-lg-6">
+        <article class="col-sm-6 col-lg-6">
           <img class="img img-size img-responsive" src="{{ product.url_img }}" alt="{{ product.name }}">
         </article>
-        <aside class="col-sm-12 col-lg-6">
-          <h3 class="product-name">{{ product.name }}</h3>
-          <span  class="badge">{{ product.price }} {{ currency }}</span>
-          <button class="btn_buy btn space">
-            <div class="btn_img">
-              <i class="material-icons md-36">shopping_cart</i>
-            </div>
-            <div class="btn_txt">
-              <p>Add to cart</p>
-            </div>
-          </button>
+        <aside class="col-sm-6 col-lg-6">
+          <p class="product-name">{{ product.name }}</p>
+            <span  class="badge">{{ product.price }} {{ currency }}</span>
+            <button class="btn_buy btn space">
+              <div class="btn_img">
+                <i class="material-icons md-36">shopping_cart</i>
+              </div>
+              <div class="btn_txt">
+                <p>Add to cart</p>
+              </div>
+            </button>
         </aside>
       </div>
       <div class="row description">
-        <div class="caption col-sm-12  col-lg-11">
+        <div class="caption col-sm-12  col-lg-10">
           <h4 class="nav-tabs description_title">Description</h4>
           <p class="product_description">{{ product.description }}</p>
         </div>

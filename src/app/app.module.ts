@@ -20,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product_detail/product_detail.component';
 import { ShoppingCartComponent } from './components/shopping-car/shopping-cart.component';
 import { CategoryComponent } from './components/category/category.component';
+import {BannerComponent} from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CategoryComponent } from './components/category/category.component';
     ProductComponent,
     ProductDetailComponent,
     ShoppingCartComponent,
-    CategoryComponent
+    CategoryComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

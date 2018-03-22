@@ -4,13 +4,14 @@
 .product_description {
   text-align: justify;
   margin-left: 4%;
+  margin-right: 8%;
 }
 
 .description_title{
   margin-left: 4%;
   margin-bottom: 2%;
   padding-bottom: 5px;
-  color: #2196F3;
+  color: #286091;
 }
 
 .product_actions {
@@ -18,12 +19,12 @@
 }
 
 .badge {
-  font-size: 25px;
+  font-size: 20px;
   background: #2196F3;
+  padding: 10px 12px;
   display: block;
   margin: 0 auto;
-  width: 40%;
-  padding: 10px;
+  width: 44%;
 }
 
 .thumbnail {
@@ -38,24 +39,31 @@
   margin:auto;
 }
 .img-size{
-  width: 450px;
-  height: 400px;
+  width: 430px;
+  height: 300px;
 }
 
 .product-name{
+  margin-top: 5%;
   margin-bottom: 10%;
+  text-align: center;
+  text-decoration: solid;
+  font-size: 20px;
 }
 
 .btn_buy{
   background:#ea9c51;
   color: #FFFFFF;
-  padding: 10px;
+  padding: 5px 10px;
   cursor: pointer;
-
+  height: 10%!important;
+  font-size: medium;
   display: block;
   margin: 0 auto;
-  width: 60%;
-  font-size: xx-large;
+  width: 44%;
+}
+.btn_buy:hover{
+  background: #dd8f53;
 }
 
 .space{
@@ -63,16 +71,21 @@
 }
 
 i{
-  margin-right: 25px;
+  display: block;
+  margin: 0 auto;
 }
 
 .btn_img{
-  margin-right: auto;
-  margin-left: auto;
+  display: block;
+  margin: 0 auto;
+  height: 10%;
 }
 
 .btn_txt{
-
+  height: 10%;
+  margin: 0;
 }
+
+
 
 

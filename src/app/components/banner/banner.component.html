@@ -1,0 +1,34 @@
+
+<div class="container">
+
+  <div class="row">
+
+    <section>
+      <div id="carousel-category" class="carousel slide" data-ride="carousel">
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div *ngFor="let slides of image_list">
+            <div *ngIf="slides.idCategory == idCategory && slides.active">
+              <div class="item">
+                <img class="img-size " src="{{slides.route}}" alt="Slide 1">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="row">
+      <div class="title_category" *ngFor="let category of category_list">
+        <h3 *ngIf="category.idCategory == idCategory">{{ category.name }}</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
