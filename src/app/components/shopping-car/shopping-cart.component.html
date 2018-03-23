@@ -1,9 +1,0 @@
-<div *ngIf="!products_in_cart" class="empty_cart">
-  <img src="../../../assets/img/empty-cart.png" alt="empty_cart">
-</div>
-
-<div *ngIf="products_in_cart">
-  <div *ngFor="let product of products_in_cart">
-    <app-product [product]="product" ></app-product>
-  </div>
-</div>

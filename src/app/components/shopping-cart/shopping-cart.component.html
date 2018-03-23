@@ -1,0 +1,25 @@
+<div *ngIf="!products_in_cart" class="empty_cart">
+  <img src="../../../assets/img/empty-cart.png" alt="empty_cart">
+</div>
+
+<div *ngIf="products_in_cart">
+
+  <h2>Products in your cart</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Remove from cart</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products_in_cart">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | number: '1.2' }} {{ currency }}</td>
+        <td><input type="button" value="remove" class="btn btn-default" (click)="prepareRemove(product)"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Total: {{ totalPrice | number: '1.2' }} {{ currency }}</h3>
+</div>
