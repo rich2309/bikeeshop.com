@@ -21,9 +21,11 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product_detail/product_detail.component';
-import { ShoppingCartComponent } from './components/shopping-car/shopping-cart.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import {BannerComponent} from './components/banner/banner.component';
+import { ProductInCartComponent } from './components/product_in_cart/product_in_cart.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import {BannerComponent} from './components/banner/banner.component';
     ProductDetailComponent,
     ShoppingCartComponent,
     CategoryComponent,
-    BannerComponent
+    BannerComponent,
+    ProductInCartComponent
   ],
   imports: [
     BrowserModule,
