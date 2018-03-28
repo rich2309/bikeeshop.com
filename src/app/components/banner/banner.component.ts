@@ -74,8 +74,6 @@ export class BannerComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {
-   console.log(this.image_list);
-  }
+  ngOnInit() {}
 
 }

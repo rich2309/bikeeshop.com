@@ -47,3 +47,7 @@ footer {
   font-family: inherit;
   box-sizing: border-box;
 }
+
+.float-right {
+  float: right
+}

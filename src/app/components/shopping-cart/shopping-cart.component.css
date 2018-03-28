@@ -9,3 +9,26 @@
   width: 100%;
   max-width: 450px;
 }
+
+.img-list {
+  max-width: 148px;
+  max-height: 148px;
+}
+
+#remove-btn {
+  display: block;
+}
+
+td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: baseline!important;
+  border-top: 1px solid #ddd;
+  font-size: 18px;
+}
+
+select {
+  width: 40px;
+  font-size: 15px!important;
+}
+

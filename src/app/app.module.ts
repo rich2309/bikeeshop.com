@@ -1,5 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+// forms support
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // routing support
 import { RoutingModule, AppRoutingProviders } from './app.routing';
@@ -26,6 +29,10 @@ import { CategoryComponent } from './components/category/category.component';
 import {BannerComponent} from './components/banner/banner.component';
 import { ProductInCartComponent } from './components/product_in_cart/product_in_cart.component';
 
+// pipes
+import { FillPipe } from './pipes/fill.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -36,9 +43,12 @@ import { ProductInCartComponent } from './components/product_in_cart/product_in_
     ShoppingCartComponent,
     CategoryComponent,
     BannerComponent,
-    ProductInCartComponent
+    ProductInCartComponent,
+    FillPipe
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     RoutingModule,
@@ -47,7 +57,8 @@ import { ProductInCartComponent } from './components/product_in_cart/product_in_
   providers: [
     AppRoutingProviders,
     CookieService,
-    Dataservice
+    Dataservice,
+    Title
   ],
   bootstrap: [AppComponent]
 })

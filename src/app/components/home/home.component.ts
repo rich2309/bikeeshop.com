@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 // import { Router, ActivatedRoute, Params } from '@angular/router';
 import { APP_CURRENCIES } from '../../services/globals';
 import { ProductsService } from '../../services/dao/products.service';
@@ -12,7 +13,7 @@ import { Products } from '../../entities/Products';
 })
 export class HomeComponent implements OnInit {
 
-  public title_component: string;
+  public componentTitle: string;
   public product_list: Products[];
   public product_currency: string;
 
@@ -20,12 +21,14 @@ export class HomeComponent implements OnInit {
     // private _route: ActivatedRoute,
     // private _router: Router,
     private _productService: ProductsService,
+    private _titleService: Title
   ) {
-    this.title_component = 'Bikeeshop.com';
+    this.componentTitle = 'Bikeeshop.com: The best bikes at the best prices';
     this.product_currency = APP_CURRENCIES.euro;
   }
 
   ngOnInit() {
+    this._titleService.setTitle(this.componentTitle);
     this._productService.getProducts().subscribe(
       result => {
         this.product_list = result;
