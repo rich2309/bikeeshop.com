@@ -1,13 +1,19 @@
+import {Address} from './Address';
 
 export class User {
 
   private _idUser: number;
   private _name: string;
   private _lastname: string;
-  private _adresse: string;
+  private _adresse: Address;
   private _email: string;
 
-  constructor() {}
+  constructor() {
+    this.adresse = new Address();
+    this.name = '';
+    this.lastname = '';
+    this.email = '';
+  }
 
 
   get idUser(): number {
@@ -34,11 +40,12 @@ export class User {
     this._lastname = value;
   }
 
-  get adresse(): string {
+
+  get adresse(): Address {
     return this._adresse;
   }
 
-  set adresse(value: string) {
+  set adresse(value: Address) {
     this._adresse = value;
   }
 

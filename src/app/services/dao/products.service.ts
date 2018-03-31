@@ -12,15 +12,26 @@ export class ProductsService {
     public http: HttpClient
   ) {}
 
-  getProducts(): Observable<any> {
-    return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products);
+  getProducts(page: number, limit: number): Observable<any> {
+    return this.http.get(
+      API_GLOBALS.url +
+      API_GLOBALS.source_urn.products +
+      '/page/' + page +
+      '/limit/' + limit
+    );
   }
 
   getProduct(idProduct: number) {
     return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products + '/' + idProduct);
   }
 
-  getProductsByCategory(idCategory: number): Observable<any> {
-    return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.products + '/category/' + idCategory);
+  getProductsByCategory(idCategory: number, page: number, limit: number): Observable<any> {
+    return this.http.get(
+      API_GLOBALS.url +
+      API_GLOBALS.source_urn.products +
+      '/category/' + idCategory +
+      '/page/' + page +
+      '/limit/' + limit
+    );
   }
 }

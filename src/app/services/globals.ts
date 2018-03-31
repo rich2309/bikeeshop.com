@@ -13,6 +13,16 @@ export const API_GLOBALS = {
   }
 };
 
+
+export const API_GEO_FR = {
+  url: 'https://geo.api.gouv.fr',
+  source_urn: {
+    regions: 'regions',
+    departements: 'departements',
+    communes: 'communes'
+  }
+};
+
 export const APP_CURRENCIES = {
   dollar: '$',
   euro: '€'
