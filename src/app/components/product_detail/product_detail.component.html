@@ -6,7 +6,7 @@
           <img class="img img-size img-responsive" src="{{ product.url_img }}" alt="{{ product.name }}">
         </article>
         <aside class="col-sm-12 col-lg-6">
-          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-name">{{ product.name }}</p>
           <span  class="badge">{{ product.price }} {{ currency }}</span>
           <button class="btn_buy btn space" (click)="addProductToCart(product)">
             <div class="btn_img">
