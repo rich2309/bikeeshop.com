@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this._titleService.setTitle(this.componentTitle);
-    this._productService.getProducts().subscribe(
+    this._productService.getProducts(1, 3).subscribe(
       result => {
         this.product_list = result;
       },

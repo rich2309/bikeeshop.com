@@ -9,13 +9,13 @@ export class CategoriesService {
 
   constructor(
     public http: HttpClient
-  ) {
+  ) {}
 
-    console.log('');
-  }
-
-  getCategories(): Observable<any> {
-    return this.http.get(API_GLOBALS.url + API_GLOBALS.source_urn.category);
+  getCategories(page: number, limit: number): Observable<any> {
+    return this.http.get(
+      API_GLOBALS.url +
+      API_GLOBALS.source_urn.category
+    );
   }
 
 }

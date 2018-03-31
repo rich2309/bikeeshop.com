@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
 import { Products } from '../../entities/Products';
 import { APP_CURRENCIES } from '../../services/globals';
+import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 
 @Component({
@@ -20,6 +21,7 @@ export class ShoppingCartComponent implements OnInit {
 
   constructor(
     private _cookieService: CookieService,
+    private _router: Router,
     private _titleService: Title
   ) {
     this.componentTitle = 'My shopping cart';
@@ -76,7 +78,6 @@ export class ShoppingCartComponent implements OnInit {
   removeFromCart(product: Products): void {
     const indexProduct = this.products_in_cart.indexOf(product);
     this.removePrice(indexProduct);
-    this._cookieService.set('shopping_cart', JSON.stringify(this.products_in_cart));
   }
 
   removePrice(indexProduct: number) {
@@ -86,7 +87,17 @@ export class ShoppingCartComponent implements OnInit {
       this.products_in_cart = null;
       this._cookieService.delete('shopping_cart');
     } else {
+      this._cookieService.set('shopping_cart', JSON.stringify(this.products_in_cart));
       this.calculateFinalPrice();
     }
+  }
+
+  makeCheckout(): void {
+    const checkout = {
+      product_list: this.products_in_cart,
+      product_prices: this.quantities
+    };
+    this._cookieService.set('order', JSON.stringify(checkout));
+    this._router.navigate(['checkout']);
   }
 }

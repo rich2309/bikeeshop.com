@@ -26,8 +26,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product_detail/product_detail.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { CategoryComponent } from './components/category/category.component';
-import {BannerComponent} from './components/banner/banner.component';
-import { ProductInCartComponent } from './components/product_in_cart/product_in_cart.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 // pipes
 import { FillPipe } from './pipes/fill.pipe';
@@ -43,7 +43,7 @@ import { FillPipe } from './pipes/fill.pipe';
     ShoppingCartComponent,
     CategoryComponent,
     BannerComponent,
-    ProductInCartComponent,
+    CheckoutComponent,
     FillPipe
   ],
   imports: [

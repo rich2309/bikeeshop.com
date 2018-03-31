@@ -35,7 +35,7 @@ export class CategoryComponent implements OnInit {
   }
 
   paramsChanged(idCategory: any) {
-    this._productService.getProductsByCategory(idCategory).subscribe(
+    this._productService.getProductsByCategory(idCategory, 1, 3).subscribe(
       result => {
         this.product_list = result;
         this.idCategory = idCategory;
