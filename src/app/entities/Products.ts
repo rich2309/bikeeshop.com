@@ -7,6 +7,7 @@ export class Products {
   private _description: string;
   private _short_description: string;
   private _url_img: string;
+  private _quantity: number;
   private _id_category: number;
 
 
@@ -58,6 +59,15 @@ export class Products {
 
   set short_description(value: string) {
     this._short_description = value;
+  }
+
+
+  get quantity(): number {
+    return this._quantity;
+  }
+
+  set quantity(value: number) {
+    this._quantity = value;
   }
 
   get url_img(): string {

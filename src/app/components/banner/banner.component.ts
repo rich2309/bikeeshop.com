@@ -21,7 +21,7 @@ export class BannerComponent implements OnInit {
   public category_list: Category[];
 
   constructor(private _categoryService: CategoriesService) {
-    this._categoryService.getCategories().subscribe(
+    this._categoryService.getCategories(1, 3).subscribe(
       result => {
         this.category_list = result;
       },
@@ -74,8 +74,6 @@ export class BannerComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {
-   console.log(this.image_list);
-  }
+  ngOnInit() {}
 
 }

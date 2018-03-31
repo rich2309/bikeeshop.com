@@ -9,22 +9,17 @@ import {Category} from './entities/Category';
   providers: [CategoriesService]
 })
 export class AppComponent implements OnInit {
-  public title: string;
+
   public category_list: Category[];
 
   constructor(
     private _categoryService: CategoriesService
-  ) {
-    this.title = 'Bikeeshop.com';
-  }
+  ) {}
 
   ngOnInit() {
-    this._categoryService.getCategories().subscribe(
+    this._categoryService.getCategories(1, 3).subscribe(
       result => {
         this.category_list = result;
-      },
-      error => {
-        console.log(<any>error);
       }
     );
   }

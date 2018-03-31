@@ -1,0 +1,43 @@
+<div *ngIf="!products_in_cart" class="empty_cart">
+  <img src="../../../assets/img/empty-cart.png" alt="empty_cart">
+</div>
+
+<div *ngIf="products_in_cart">
+
+  <div class="row tile">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <h2>{{componentTitle}}</h2>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <button class="btn btn-primary float-right" (click)="makeCheckout()" >Proceed to checkout</button>
+    </div>
+    <hr>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th colspan="2"></th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products_in_cart; let i = index">
+        <td>
+          <img class="img-list" src="{{product.url_img}}" alt="{{product.name}}">
+          <button id="remove-btn" class="btn btn-link" (click)="prepareRemove(product)">Remove from cart</button>
+        </td>
+        <td><a [routerLink]="'/details/' + product.idProduct">{{product.name}}</a></td>
+        <td>{{ product.price | number: '1.2' }} {{ currency }}</td>
+        <td>
+          <select #select (change)="selectQuantity($event.target.value,i)">
+            <option *ngFor="let value of product.quantity | fill" value="{{value}}">
+              {{value}}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 class="float-right">Total: {{ totalPrice | number: '1.2' }} {{ currency }}</h3>
+</div>

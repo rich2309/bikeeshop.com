@@ -1,0 +1,43 @@
+.tile {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+h2 {
+  margin-top: -5px;
+}
+.empty_cart {
+  width: 100%;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.empty_cart > img {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 450px;
+}
+
+.img-list {
+  max-width: 148px;
+  max-height: 148px;
+}
+
+#remove-btn {
+  display: block;
+}
+
+td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: baseline!important;
+  border-top: 1px solid #ddd;
+  font-size: 18px;
+}
+
+select {
+  width: 40px;
+  font-size: 15px!important;
+}
+
