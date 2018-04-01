@@ -15,6 +15,7 @@ export class CategoryComponent implements OnInit {
   public product_list: Products[];
   public idCategory: any;
   public titleComponent: string;
+  public page: number;
 
 
   constructor(
@@ -24,18 +25,38 @@ export class CategoryComponent implements OnInit {
     private _titleService: Title
   ) {
     this.titleComponent = 'Search by category';
+    this.page = 1;
   }
 
   ngOnInit() {
     this._titleService.setTitle(this.titleComponent);
+    this.initComponentWithParams();
+    console.log(this.product_list);
+  }
+
+  initComponentWithParams() {
     this._route.params.subscribe(
       params => {
-        this.paramsChanged(params['idCategory']);
+        this.paramsChanged(params['idCategory'], this.page);
       });
   }
 
-  paramsChanged(idCategory: any) {
-    this._productService.getProductsByCategory(idCategory, 1, 3).subscribe(
+  nextPage() {
+    this.page += 1;
+    this.initComponentWithParams();
+    console.log(this.product_list);
+    if (this.product_list.length < 1) {
+      this.backPage();
+    }
+  }
+
+  backPage() {
+    this.page = (this.page === 1) ? 1 : this.page -= 1;
+    this.initComponentWithParams();
+  }
+
+  paramsChanged(idCategory: any, page: number) {
+    this._productService.getProductsByCategory(idCategory, page, 3).subscribe(
       result => {
         this.product_list = result;
         this.idCategory = idCategory;

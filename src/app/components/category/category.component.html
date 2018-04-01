@@ -1,6 +1,26 @@
-<app-banner [idCategory]="idCategory"></app-banner>
+<div class="container">
+  <div class="row">
+    <app-banner [idCategory]="idCategory"></app-banner>
+  </div>
 
 
-<div *ngFor="let product of product_list">
-  <app-product [product]="product"></app-product>
+  <div class="row">
+    <div *ngFor="let product of product_list">
+      <app-product [product]="product"></app-product>
+    </div>
+    <div class="message" *ngIf="product_list.length < 1">
+      <h1>No products to show</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="col-sm-6">
+        <button class="btn btn-primary center-button-left" [disabled]="page == 1" (click)="backPage()">Back</button>
+      </div>
+      <div class="col-sm-6">
+        <button class="btn btn-primary" [disabled]="product_list.length < 1" (click)="nextPage()">Next</button>
+      </div>
+    </div>
+  </div>
 </div>

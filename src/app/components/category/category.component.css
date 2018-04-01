@@ -1,0 +1,15 @@
+.center-button-left{
+  float: right;
+}
+
+.message{
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 20px;
+  color: #9E9E9E;
+}
+
+.btn{
+  margin-top: 70px;
+  background-color: #2196F3;
+}

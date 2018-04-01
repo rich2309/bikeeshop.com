@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   public componentTitle: string;
   public product_list: Products[];
   public product_currency: string;
+  public page: number;
 
   constructor(
     // private _route: ActivatedRoute,
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   ) {
     this.componentTitle = 'Bikeeshop.com: The best bikes at the best prices';
     this.product_currency = APP_CURRENCIES.euro;
+    this.page = 1;
   }
 
   ngOnInit() {
@@ -37,6 +39,35 @@ export class HomeComponent implements OnInit {
         console.log(<any>error);
       }
     );
+  }
+
+  initComponentWithParams() {
+        this.paramsChanged(this.page);
+  }
+
+  paramsChanged(page: number) {
+    this._productService.getProducts(page, 3).subscribe(
+      result => {
+        this.product_list = result;
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
+  }
+
+  nextPage() {
+    this.page += 1;
+    this.initComponentWithParams();
+    console.log(this.product_list);
+    if (this.product_list.length < 1) {
+      this.backPage();
+    }
+  }
+
+  backPage() {
+    this.page = (this.page === 1) ? 1 : this.page -= 1;
+    this.initComponentWithParams();
   }
 
 }
