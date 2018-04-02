@@ -2,14 +2,16 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { FranceGeoService } from '../../services/rest/france.geo.service';
+import { CookieService } from 'ngx-cookie-service';
 import { User } from '../../entities/User';
 import swal from 'sweetalert2';
+import {OrdersService} from '../../services/dao/orders.service';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css'],
-  providers: [FranceGeoService]
+  providers: [FranceGeoService, OrdersService]
 })
 export class CheckoutComponent implements OnInit {
 
@@ -17,15 +19,24 @@ export class CheckoutComponent implements OnInit {
   public commune_list: Array<any>;
   public user: User;
   public userForm: FormGroup;
+  public product_list: Array<any>;
+  public product_quantities: Array<any>;
+  public total_price: number;
 
   constructor(
     private _titleService: Title,
     private _franceGeo: FranceGeoService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private _cookieService: CookieService,
+    private _orderService: OrdersService
   ) {
     this.titleComponent = 'Shipment and personal information';
     this.user = new User();
     this.createForm();
+    const data_bundle = JSON.parse(this._cookieService.get('order'));
+    this.product_list = data_bundle.product_list;
+    this.product_quantities = data_bundle.product_quantities;
+    this.total_price = Number(data_bundle.total_price);
   }
 
   createForm(): void {
@@ -96,6 +107,52 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.userForm.status);
+    swal({
+      title: 'Confirm your payment?',
+      type: 'question',
+      text: 'Your order will be sent to the address you have submitted',
+      showCancelButton: true,
+      confirmButtonText: 'Pay now',
+      showLoaderOnConfirm: true,
+      preConfirm: () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, 2000);
+        });
+      },
+      allowOutsideClick: () => !swal.isLoading()
+    }).then((result) => {
+      if (result.value) {
+
+        const params = {
+          product_list: this.product_list,
+          product_quantities: this.product_quantities,
+          user: this.user,
+          total_price: this.total_price
+        };
+
+        this._orderService.makeOrder(params).subscribe(
+          response => {
+            if (response.rows_inserted === this.product_list.length) {
+              swal({
+                type: 'success',
+                title: 'Payment received',
+                confirmButtonText: 'Go to home page',
+                html: 'You will receive your confirmation by email in a few minutes (Not really, but that would be great!)'
+              });
+            } else {
+              swal({
+                type: 'error',
+                title: 'Payment rejected',
+                confirmButtonText: 'Go to home page',
+                html: 'There is an error to proceed with your payment.<br>' +
+                'This would be due to insufficient products in stock or failures in your internet connexion'
+              });
+            }
+          }
+        );
+      }
+    });
   }
 }

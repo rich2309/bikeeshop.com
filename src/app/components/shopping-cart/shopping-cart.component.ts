@@ -95,7 +95,8 @@ export class ShoppingCartComponent implements OnInit {
   makeCheckout(): void {
     const checkout = {
       product_list: this.products_in_cart,
-      product_prices: this.quantities
+      product_quantities: this.quantities,
+      total_price: this.totalPrice
     };
     this._cookieService.set('order', JSON.stringify(checkout));
     this._router.navigate(['checkout']);

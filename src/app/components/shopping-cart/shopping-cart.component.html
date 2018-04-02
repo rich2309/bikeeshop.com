@@ -8,9 +8,6 @@
     <div class="col-sm-12 col-md-6 col-lg-6">
       <h2>{{componentTitle}}</h2>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-6">
-      <button class="btn btn-primary float-right" (click)="makeCheckout()" >Proceed to checkout</button>
-    </div>
     <hr>
   </div>
   <table class="table table-striped">
@@ -39,5 +36,14 @@
       </tr>
     </tbody>
   </table>
-  <h3 class="float-right">Total: {{ totalPrice | number: '1.2' }} {{ currency }}</h3>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h3 class="float-right">Total: {{ totalPrice | number: '1.2' }} {{ currency }}</h3>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <button class="btn btn-primary float-right" (click)="makeCheckout()" >Proceed to checkout</button>
+    </div>
+  </div>
+
 </div>

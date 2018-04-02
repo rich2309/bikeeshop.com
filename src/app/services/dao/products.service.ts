@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-import { Products } from '../../entities/Products';
 import { API_GLOBALS } from '../globals';
 
 @Injectable()
 export class ProductsService {
 
   constructor(
-    public http: HttpClient
+    private http: HttpClient
   ) {}
 
   getProducts(page: number, limit: number): Observable<any> {
