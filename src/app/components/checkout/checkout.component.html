@@ -9,7 +9,7 @@
       <div class="col-md-4 col-lg-4 offset-8">
         <label for="pc">Postal code</label>
         <div class="input-group">
-          <input formControlName="postal_code" type="text" id="pc" class="form-control">
+          <input formControlName="postal_code" type="text" id="pc" class="form-control" [(ngModel)]="user.adresse.postal_code">
           <span class="input-group-btn">
         <button class="btn btn-default" type="button" (click)="loadCommunes()">
           <span class="glyphicon glyphicon-search"></span>
@@ -22,14 +22,14 @@
     <div class="row address">
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <label for="street">Street</label>
-        <textarea formControlName="street" class="form-control" id="street" cols="30" rows="2"></textarea>
+        <textarea formControlName="street" [(ngModel)]="user.adresse.street" class="form-control" id="street" cols="30" rows="2"></textarea>
       </div>
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <label for="commune">City</label>
         <!-- commune list -->
         <div *ngIf="commune_list">
           <div class="input-group">
-            <select id="commune" class="form-control" formControlName="commune">
+            <select id="commune" class="form-control" formControlName="commune" [(ngModel)]="user.adresse.commune">
               <option [value]="item.nom" *ngFor="let item of commune_list" >{{ item.nom }}</option>
             </select>
           </div>
@@ -55,22 +55,21 @@
   <div class="row">
     <div class="col-xs-12 col-md-4 col-lg-4">
       <label for="name">Name</label>
-      <input  formControlName="name" type="text" id="name" class="form-control">
+      <input  formControlName="name" type="text" id="name" class="form-control" [(ngModel)]="user.name">
     </div>
     <div class="col-xs-12 col-md-4 col-lg-4">
       <label for="last-name">Last name</label>
-      <input formControlName="last_name" type="text" id="last-name" class="form-control">
+      <input formControlName="last_name" type="text" id="last-name" class="form-control" [(ngModel)]="user.lastname">
     </div>
     <div class="col-xs-12 col-md-4 col-lg-4">
       <label for="email">Email</label>
-      <input formControlName="email" type="email" id="email" class="form-control">
+      <input formControlName="email" type="email" id="email" class="form-control" [(ngModel)]="user.email">
     </div>
   </div>
   <!-- End user information -->
   <div class="row">
-    <div class="col-sm-9 col-md-9 col-lg-9"></div>
-    <div class="col-sm-3 col-md-3 col-lg-3">
-      <input class="btn btn-success" type="submit" [disabled]="userForm.status === 'INVALID'" value="Proceed to payment">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <input class="btn btn-success float-right" type="submit" value="Proceed to payment">
     </div>
   </div>
 </form>
