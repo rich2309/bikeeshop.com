@@ -140,7 +140,15 @@ export class CheckoutComponent implements OnInit {
                 title: 'Payment received',
                 confirmButtonText: 'Go to home page',
                 html: 'You will receive your confirmation by email in a few minutes (Not really, but that would be great!)'
+              }).then((confirm) => {
+                if (confirm.value) {
+                  console.log(confirm.value);
+                }
               });
+              this._cookieService.delete('order');
+              this._cookieService.delete('shopping_cart');
+              this.userForm.reset();
+              this.commune_list = null;
             } else {
               swal({
                 type: 'error',
