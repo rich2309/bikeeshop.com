@@ -8,14 +8,17 @@
         <aside class="col-sm-12 col-lg-6">
           <p class="product-name">{{ product.name }}</p>
           <span  class="badge">{{ product.price }} {{ currency }}</span>
-          <button class="btn_buy btn space" (click)="addProductToCart(product)">
-            <div class="btn_img">
-              <i class="material-icons md-36">shopping_cart</i>
-            </div>
-            <div class="btn_txt">
-              <p>Add to cart</p>
-            </div>
-          </button>
+
+            <button class="btn_buy btn space" [disabled]="product.quantity == 0" (click)="addProductToCart(product)">
+              <span matTooltip="There aren't products in stock" [matTooltipDisabled]="product.quantity > 0">
+                <div class="btn_img">
+                  <i class="material-icons md-36">shopping_cart</i>
+                </div>
+                <div class="btn_txt">
+                  <p>Add to cart</p>
+                </div>
+              </span>
+            </button>
         </aside>
       </div>
       <div class="row description">
@@ -26,6 +29,4 @@
       </div>
     </div>
   </div>
-
-
 

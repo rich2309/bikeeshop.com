@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { CategoriesService } from './services/dao/categories.service';
 import {Category} from './entities/Category';
+import 'hammerjs';
 
 @Component({
   selector: 'app-root',

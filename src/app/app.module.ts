@@ -19,6 +19,10 @@ import { CookieService } from 'ngx-cookie-service';
 // sweet-alert 2 support
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
+// tooltip support
+import { MatTooltipModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // components
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
@@ -52,7 +56,9 @@ import { FillPipe } from './pipes/fill.pipe';
     BrowserModule,
     HttpClientModule,
     RoutingModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    MatTooltipModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AppRoutingProviders,

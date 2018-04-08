@@ -55,7 +55,7 @@
   background:#ea9c51;
   color: #FFFFFF;
   padding: 5px 10px;
-  cursor: pointer;
+
   height: 10%!important;
   font-size: medium;
   display: block;
@@ -86,6 +86,9 @@ i{
   margin: 0;
 }
 
+.tooltip {
+  font-size: 20px!important;
+}
 
 
 

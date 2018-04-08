@@ -48,13 +48,13 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <div class="col-sm-6">
-          <button class="btn btn-primary center-button-left" [disabled]="page == 1" (click)="backPage()">Back</button>
-        </div>
-        <div class="col-sm-6">
-          <button class="btn btn-primary" [disabled]="product_list.length < 1" (click)="nextPage()">Next</button>
-        </div>
+      <div class="col-sm-12 col-lg-12">
+         <div class="content-next">
+           <button class="btn btn-primary center-button-left" [disabled]="product_list.length < 1" (click)="nextPage()">Next</button>
+         </div>
+         <div class="content-back">
+           <button class="btn btn-primary center-button-right" [disabled]="page == 1" (click)="backPage()">Back</button>
+         </div>
       </div>
     </div>
 

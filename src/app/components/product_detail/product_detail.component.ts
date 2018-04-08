@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Products } from '../../entities/Products';
 import { Dataservice } from '../../services/dataservice';
 import swal from 'sweetalert2';
+import 'hammerjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -38,6 +39,7 @@ export class ProductDetailComponent implements OnInit {
       result => {
         this.product = JSON.parse(JSON.stringify(result));
       });
+
   }
 
   addProductToCart(product: Products): void {
@@ -53,5 +55,7 @@ export class ProductDetailComponent implements OnInit {
     swal('added to your cart', '', 'success');
   }
 }
+
+
 
 

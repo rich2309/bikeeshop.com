@@ -2,6 +2,33 @@
   float: right;
 }
 
+.center-button-right{
+  float: left;
+}
+.content-next{
+  width: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+@media (max-width: 700px){
+  .content-next{
+    float: right;
+  }
+
+  .content-back{
+    float: left;
+  }
+}
+
+.content-back{
+  width: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
 .message{
   margin-bottom: 50px;
   text-align: center;
@@ -12,4 +39,5 @@
 .btn{
   margin-top: 70px;
   background-color: #2196F3;
+  position: relative;
 }
