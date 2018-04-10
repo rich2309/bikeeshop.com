@@ -2,9 +2,16 @@
   <div class="col-lg-12">
     <div class="thumbnail col-sm-12">
       <div class="row">
-        <article class="col-sm-12 col-lg-6">
-          <img class="img img-size img-responsive" src="{{ product.url_img }}" alt="{{ product.name }}">
-        </article>
+        <div *ngIf="product.url_img === ''">
+          <article class="col-sm-12 col-lg-6">
+            <img class="img-size img-responsive" src="../../../assets/img/noimage.jpg" alt="{{ product.name }}">
+          </article>
+        </div>
+        <div *ngIf="product.url_img !== ''">
+          <article class="col-sm-12 col-lg-6">
+            <img class="img-size img-responsive" src="{{product.url_img}}" alt="{{ product.name }}">
+          </article>
+        </div>
         <aside class="col-sm-12 col-lg-6">
           <p class="product-name">{{ product.name }}</p>
           <span  class="badge">{{ product.price }} {{ currency }}</span>

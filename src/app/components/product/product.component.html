@@ -1,8 +1,15 @@
 <div class="col-md-4 col-sm-6">
   <div class="thumbnail">
-    <a (click)="productDetails(product)">
-      <img class="img-size img-responsive" src="{{ product.url_img }}" alt="{{ product.name }}">
-    </a>
+    <div *ngIf="product.url_img === ''">
+      <a (click)="productDetails(product)">
+        <img class="img-size img-responsive" src="../../../assets/img/noimage.jpg" alt="{{ product.name }}">
+      </a>
+    </div>
+    <div *ngIf="product.url_img !== ''">
+      <a (click)="productDetails(product)">
+        <img class="img-size img-responsive" src="{{ product.url_img }}" alt="{{ product.name }}">
+      </a>
+    </div>
     <div class="caption pr-size">
       <div class="product-name">
         <h3>
