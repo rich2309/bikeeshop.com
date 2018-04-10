@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
     this.componentTitle = 'Bikeeshop.com: The best bikes at the best prices';
     this.product_currency = APP_CURRENCIES.euro;
     this.page = 1;
+    this.product_list = [];
   }
 
   ngOnInit() {
@@ -59,7 +60,6 @@ export class HomeComponent implements OnInit {
   nextPage() {
     this.page += 1;
     this.initComponentWithParams();
-    console.log(this.product_list);
     if (this.product_list.length < 1) {
       this.backPage();
     }

@@ -11,15 +11,7 @@ export class Products {
   private _id_category: number;
 
 
-  constructor(idProduct: number, name: string, price: number, description: string, short_description: string, _url_img: string, id_category: number) {
-    this._idProduct = idProduct;
-    this._name = name;
-    this._price = price;
-    this._description = description;
-    this._short_description = short_description;
-    this._url_img = _url_img;
-    this._id_category = id_category;
-  }
+  constructor() {}
 
   get idProduct(): number {
     return this._idProduct;

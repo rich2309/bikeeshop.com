@@ -28,6 +28,7 @@ export class ProductDetailComponent implements OnInit {
     private _cookieService: CookieService
   ) {
     this.currency = APP_CURRENCIES.euro;
+    this.product = new Products();
   }
   ngOnInit () {
     this._route.params.subscribe(

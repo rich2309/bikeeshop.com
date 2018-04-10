@@ -69,7 +69,7 @@
   <!-- End user information -->
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
-      <input class="btn btn-success float-right" type="submit" value="Proceed to payment">
+      <input class="btn btn-success float-right" type="submit" [disabled]="userForm.status == 'INVALID'" value="Proceed to payment">
     </div>
   </div>
 </form>
