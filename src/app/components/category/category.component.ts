@@ -26,12 +26,12 @@ export class CategoryComponent implements OnInit {
   ) {
     this.titleComponent = 'Search by category';
     this.page = 1;
+    this.product_list = [];
   }
 
   ngOnInit() {
     this._titleService.setTitle(this.titleComponent);
     this.initComponentWithParams();
-    console.log(this.product_list);
   }
 
   initComponentWithParams() {
@@ -44,7 +44,6 @@ export class CategoryComponent implements OnInit {
   nextPage() {
     this.page += 1;
     this.initComponentWithParams();
-    console.log(this.product_list);
     if (this.product_list.length < 1) {
       this.backPage();
     }
