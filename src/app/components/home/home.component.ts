@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
     this.componentTitle = 'Bikeeshop.com: The best bikes at the best prices';
     this.product_currency = APP_CURRENCIES.euro;
     this.page = 1;
+    this.product_list = [];
   }
 
   ngOnInit() {
