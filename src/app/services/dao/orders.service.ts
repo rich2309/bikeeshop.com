@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { API_GLOBALS } from '../globals';
+import { API_GLOBALS } from '../../../../appconfig';
 import { HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
@@ -30,7 +30,6 @@ export class OrdersService {
       'product_quantity': params.product_quantities,
       'total_price': params.total_price
     };
-    console.log(data_request);
     const json_data = JSON.stringify(data_request);
     const data = 'data_request=' + json_data;
     const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
@@ -40,5 +39,4 @@ export class OrdersService {
       data, {headers: headers}
     ).map(result => JSON.parse(JSON.stringify(result)));
   }
-
 }

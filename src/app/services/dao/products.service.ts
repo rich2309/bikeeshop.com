@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-import { API_GLOBALS } from '../globals';
+import { API_GLOBALS } from '../../../../appconfig';
 
 @Injectable()
 export class ProductsService {

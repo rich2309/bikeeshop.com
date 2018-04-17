@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-// import { Router, ActivatedRoute, Params } from '@angular/router';
-import { APP_CURRENCIES } from '../../services/globals';
 import { ProductsService } from '../../services/dao/products.service';
-import { Products } from '../../entities/Products';
 import { CategoriesService } from '../../services/dao/categories.service';
 import {Category} from '../../entities/Category';
 

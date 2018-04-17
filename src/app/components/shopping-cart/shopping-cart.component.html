@@ -1,8 +1,8 @@
-<div *ngIf="!products_in_cart" class="empty_cart">
+<div *ngIf="products_in_cart.length <= 0" class="empty_cart">
   <img src="../../../assets/img/empty-cart.png" alt="empty_cart">
 </div>
 
-<div *ngIf="products_in_cart">
+<div *ngIf="products_in_cart.length > 0">
 
   <div class="row tile">
     <div class="col-sm-12 col-md-6 col-lg-6">
@@ -27,8 +27,8 @@
         <td><a [routerLink]="'/details/' + product.idProduct">{{product.name}}</a></td>
         <td>{{ product.price | number: '1.2' }} {{ currency }}</td>
         <td>
-          <select #select (change)="selectQuantity($event.target.value,i)">
-            <option *ngFor="let value of product.quantity | fill" value="{{value}}">
+          <select #select (change)="selectQuantity($event.target.value,i); saveCartState();">
+            <option *ngFor="let value of product.quantity | fill" value="{{value}}" [selected]="value === quantities[i]">
               {{value}}
             </option>
           </select>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-// import { Router, ActivatedRoute, Params } from '@angular/router';
-import { APP_CURRENCIES } from '../../services/globals';
+import { APP_CURRENCIES } from '../../../../appconfig';
 import { ProductsService } from '../../services/dao/products.service';
 import { Products } from '../../entities/Products';
 
