@@ -32,45 +32,29 @@ export class BannerComponent implements OnInit {
     this.image_list = [
       {
         idCategory: 1,
-        route: '../../../assets/img/kids/kids1.jpg',
-        active: 1
-      },
-      {
-        idCategory: 1,
-        route: '../../../assets/img/kids/kids2.jpg'
-      },
-      {
-        idCategory: 2,
-        route: '../../../assets/img/mountain/mountain1.jpg',
+        route: '../../../assets/img/banner_categorys/kids1.jpg',
         active: 1
       },
       {
         idCategory: 2,
-        route: '../../../assets/img/mountain/mountain2.jpg'
-      },
-      {
-        idCategory: 4,
-        route: '../../../assets/img/bmx/bmx1.jpg',
+        route: '../../../assets/img/banner_categorys/mountain1.jpg',
         active: 1
       },
       {
         idCategory: 4,
-        route: '../../../assets/img/bmx/bmx2.jpg'
+        route: '../../../assets/img/banner_categorys/bmx1.jpg',
+        active: 1
       },
       {
         idCategory: 5,
-        route: '../../../assets/img/allterrain/allterrain1.jpg',
+        route: '../../../assets/img/banner_categorys/allterrain1.jpg',
         active: 1
       },
       {
         idCategory: 6,
-        route: '../../../assets/img/crusier/crusier1.jpg',
+        route: '../../../assets/img/banner_categorys/crusier1.jpg',
         active: 1
       },
-      {
-        idCategory: 6,
-        route: '../../../assets/img/crusier/crusier2.jpg'
-      }
     ];
   }
 
