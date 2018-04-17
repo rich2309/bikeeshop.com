@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
 import { Products } from '../../entities/Products';
-import { APP_CURRENCIES } from '../../services/globals';
+import { APP_CURRENCIES } from '../../../../appconfig';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 
@@ -33,11 +33,17 @@ export class ShoppingCartComponent implements OnInit {
     this._titleService.setTitle(this.componentTitle);
     if (this._cookieService.check('shopping_cart')) {
       this.products_in_cart = JSON.parse(this._cookieService.get('shopping_cart'));
-      if (this.products_in_cart) {
-        this.quantities = new Array(this.products_in_cart.length);
-        this.quantities.fill(1, 0, this.products_in_cart.length);
-        this.calculateFinalPrice();
-      }
+    } else {
+      this.products_in_cart = [];
+    }
+    if (this._cookieService.check('product_quantities')) {
+      this.quantities = JSON.parse(this._cookieService.get('product_quantities'));
+    } else {
+      this.quantities = new Array(this.products_in_cart.length);
+      this.quantities.fill(1, 0, this.products_in_cart.length);
+    }
+    if (this.products_in_cart) {
+      this.calculateFinalPrice();
     }
   }
 
@@ -53,6 +59,7 @@ export class ShoppingCartComponent implements OnInit {
 
   selectQuantity(quantity: number, index: number): void {
     this.quantities.splice(index, 1, Number(quantity));
+    this.saveCartState();
     this.calculateFinalPrice();
   }
 
@@ -88,8 +95,13 @@ export class ShoppingCartComponent implements OnInit {
       this._cookieService.delete('shopping_cart');
     } else {
       this._cookieService.set('shopping_cart', JSON.stringify(this.products_in_cart));
+      this._cookieService.set('product_quantities', JSON.stringify(this.quantities));
       this.calculateFinalPrice();
     }
+  }
+
+  saveCartState(): void {
+    this._cookieService.set('product_quantities', JSON.stringify(this.quantities));
   }
 
   makeCheckout(): void {

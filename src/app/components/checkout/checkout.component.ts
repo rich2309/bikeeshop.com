@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { FranceGeoService } from '../../services/rest/france.geo.service';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from '../../entities/User';
 import swal from 'sweetalert2';
-import {OrdersService} from '../../services/dao/orders.service';
+import { OrdersService } from '../../services/dao/orders.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -28,7 +29,8 @@ export class CheckoutComponent implements OnInit {
     private _franceGeo: FranceGeoService,
     private _formBuilder: FormBuilder,
     private _cookieService: CookieService,
-    private _orderService: OrdersService
+    private _orderService: OrdersService,
+    private _router: Router
   ) {
     this.titleComponent = 'Shipment and personal information';
     this.user = new User();
@@ -142,11 +144,12 @@ export class CheckoutComponent implements OnInit {
                 html: 'You will receive your confirmation by email in a few minutes (Not really, but that would be great!)'
               }).then((confirm) => {
                 if (confirm.value) {
-                  console.log(confirm.value);
+                  this._router.navigate(['']);
                 }
               });
               this._cookieService.delete('order');
               this._cookieService.delete('shopping_cart');
+              this._cookieService.delete('product_quantities');
               this.userForm.reset();
               this.commune_list = null;
             } else {

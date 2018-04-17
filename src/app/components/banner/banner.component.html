@@ -10,8 +10,8 @@
         <div class="carousel-inner" role="listbox">
           <div *ngFor="let slides of image_list">
             <div *ngIf="slides.idCategory == idCategory && slides.active">
-              <div class="item">
-                <img class="img-size " src="{{slides.route}}" alt="Slide 1">
+              <div class="item active">
+                <img class="img-size " src="{{slides.route}}" alt="Category banner">
               </div>
             </div>
           </div>

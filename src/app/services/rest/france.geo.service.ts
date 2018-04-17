@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-import { API_GEO_FR } from '../globals';
+import { API_GEO_FR } from '../../../../appconfig';
 
 @Injectable()
 export class FranceGeoService {

@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/dao/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { APP_CURRENCIES } from '../../services/globals';
+import { APP_CURRENCIES } from '../../../../appconfig';
 import { CookieService } from 'ngx-cookie-service';
 import { Products } from '../../entities/Products';
 import { Dataservice } from '../../services/dataservice';
@@ -43,15 +43,26 @@ export class ProductDetailComponent implements OnInit {
 
   }
 
+  /**
+   * Add a product to the shopping cart
+   * @param {Products} product
+   *        An instance of Product
+   */
   addProductToCart(product: Products): void {
-    if (!this._cookieService.check('shopping_cart')) {
+    if (!this._cookieService.check('shopping_cart') && !this._cookieService.check('product_quantities')) {
       const shopping_cart = Array<Products>();
       shopping_cart.push(product);
       this._cookieService.set('shopping_cart', JSON.stringify(shopping_cart));
+      const product_quantities = [];
+      product_quantities.push(1);
+      this._cookieService.set('product_quantities', JSON.stringify(product_quantities));
     } else {
       const shopping_cart = JSON.parse(this._cookieService.get('shopping_cart'));
       shopping_cart.push(product);
       this._cookieService.set('shopping_cart', JSON.stringify(shopping_cart));
+      const product_quantities = JSON.parse(this._cookieService.get('product_quantities'));
+      product_quantities.push(1);
+      this._cookieService.set('product_quantities', JSON.stringify(product_quantities));
     }
     swal('added to your cart', '', 'success');
   }

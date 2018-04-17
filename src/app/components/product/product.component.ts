@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Products} from '../../entities/Products';
-import { APP_CURRENCIES } from '../../services/globals';
+import { APP_CURRENCIES } from '../../../../appconfig';
 import { Dataservice } from '../../services/dataservice';
 import { Router } from '@angular/router';
 
